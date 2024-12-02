@@ -18,16 +18,18 @@
 - Java版本: 17
 - Kotlin JVM Target: 17
 
-## 主要依赖库版本 
-oml
+## 主要依赖库版本
 - androidx-core-ktx: 1.12.0
 - androidx-appcompat: 1.6.1
 - android-material: 1.8.0
 - androidx-car-ui: 2.5.1
+- compose-bom: 2023.08.00
+- compose-compiler: 1.4.7
+- material3: 1.1.2
+- coil: 2.5.0
 
 ## 项目结构
 automotive/
-├── build.gradle # 根项目构建配置
 ├── build.gradle.kts # 主模块构建配置
 ├── gradle/
 │ └── libs.versions.toml # 依赖版本管理
@@ -48,13 +50,30 @@ automotive/
 
 3. **Kotlin 1.8.20**:
     - 与AGP 8.1.2匹配良好
-    - 提供稳定的协程支持
+    - ���供稳定的协程支持
     - 支持最新的Kotlin特性
 
-4. **SDK 版本**:
+4. **Compose BOM 2023.08.00**:
+    - 与Kotlin 1.8.20完全兼容
+    - 提供统一的Compose依赖版本管理
+    - 经过验证的稳定版本
+
+5. **SDK 版本**:
     - minSdk 29确保与大多数车载设备兼容
     - targetSdk 33提供最新的API支持
     - compileSdk 33支持最新的编译特性
+
+## 功能特性
+
+1. **Jetpack Compose UI**:
+    - 现代化的声明式UI开发
+    - Material3设计支持
+    - 完整的Compose工具链
+
+2. **图片加载**:
+    - 集成Coil图片加载库
+    - Compose专用的图片加载支持
+    - 高效的缓存机制
 
 ## 注意事项
 
@@ -69,3 +88,5 @@ automotive/
 - 初始化项目环境
 - 配置基础构建脚本
 - 添加车载UI相关依赖
+- 集成Jetpack Compose
+- 添加Coil图片加载支持 
