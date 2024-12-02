@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -11,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.jj.automotive"
         minSdk = 29
-
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -54,8 +55,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
-    // 暂时注释掉 car-ui-lib
-    // implementation(libs.androidx.car.ui)
     
     // Compose依赖
     implementation(libs.androidx.activity.compose)
@@ -65,9 +64,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     
-    // Coil
-    implementation(libs.coil.kt)
-    implementation(libs.coil.compose)
+    // Material Icons
+    implementation(libs.androidx.compose.material.icons.core)
+    implementation(libs.androidx.compose.material.icons.extended)
+    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.activity)
 }

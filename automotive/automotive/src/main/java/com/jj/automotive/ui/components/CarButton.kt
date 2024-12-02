@@ -9,16 +9,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.DirectionsCar
+import androidx.compose.material.icons.filled.Navigation
 
-/**
- * 车载专用按钮
- * 
- * @param text 按钮文本
- * @param onClick 点击回调
- * @param modifier 修饰符
- * @param enabled 是否启用
- * @param isDriving 是否在驾驶模式
- */
 @Composable
 fun CarButton(
     text: String,
@@ -54,9 +49,6 @@ fun CarButton(
     }
 }
 
-/**
- * 带图标的车载按钮
- */
 @Composable
 fun CarIconButton(
     text: String,
@@ -95,7 +87,6 @@ fun CarIconButton(
     }
 }
 
-// 预览函数
 @Preview(showBackground = true)
 @Composable
 private fun CarButtonPreview() {
@@ -104,23 +95,66 @@ private fun CarButtonPreview() {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // 普通按钮
             CarButton(
                 text = "普通模式",
                 onClick = { }
             )
             
-            // 驾驶模式按钮
             CarButton(
                 text = "驾驶模式",
                 onClick = { },
                 isDriving = true
             )
             
-            // 禁用状态
             CarButton(
                 text = "禁用状态",
                 onClick = { },
+                enabled = false
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true, name = "带图标的按钮")
+@Composable
+private fun CarIconButtonPreview() {
+    MaterialTheme {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            CarIconButton(
+                text = "播放音乐",
+                onClick = { },
+                icon = {
+                    Icon(
+                        imageVector = Icons.Default.PlayArrow,
+                        contentDescription = "播放"
+                    )
+                }
+            )
+            
+            CarIconButton(
+                text = "开始导航",
+                onClick = { },
+                icon = {
+                    Icon(
+                        imageVector = Icons.Default.Navigation,
+                        contentDescription = "导航"
+                    )
+                },
+                isDriving = true
+            )
+            
+            CarIconButton(
+                text = "车辆控制",
+                onClick = { },
+                icon = {
+                    Icon(
+                        imageVector = Icons.Default.DirectionsCar,
+                        contentDescription = "车辆"
+                    )
+                },
                 enabled = false
             )
         }
