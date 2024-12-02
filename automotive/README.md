@@ -7,12 +7,13 @@
 ### 构建工具版本
 - Gradle: 8.2
 - Android Gradle Plugin (AGP): 8.1.2
-- Kotlin: 1.8.20
+- Kotlin: 1.8.21
+- Build Tools: 34.0.0
 
 ### SDK 配置
-- compileSdk: 33 (Android 13)
+- compileSdk: 34 (Android 14)
 - minSdk: 29 (Android 10/Q)
-- targetSdk: 33 (Android 13)
+- targetSdk: 34 (Android 14)
 
 ### Java 环境
 - Java版本: 17
@@ -22,11 +23,12 @@
 - androidx-core-ktx: 1.12.0
 - androidx-appcompat: 1.6.1
 - android-material: 1.8.0
-- androidx-car-ui: 2.5.1
 - compose-bom: 2023.08.00
 - compose-compiler: 1.4.7
+- activity-compose: 1.7.2
+- lifecycle-runtime-ktx: 2.6.2
 - material3: 1.1.2
-- coil: 2.5.0
+- coil: 2.4.0
 
 ## 项目结构
 automotive/
@@ -48,20 +50,20 @@ automotive/
     - 支持最新的Android车载功能
     - 与Gradle 8.2兼容性最佳
 
-3. **Kotlin 1.8.20**:
-    - 与AGP 8.1.2匹配良好
-    - ���供稳定的协程支持
+3. **Kotlin 1.8.21**:
+    - 与Compose Compiler 1.4.7完全兼容
+    - 提供稳定的协程支持
     - 支持最新的Kotlin特性
 
 4. **Compose BOM 2023.08.00**:
-    - 与Kotlin 1.8.20完全兼容
+    - 与Kotlin 1.8.21完全兼容
     - 提供统一的Compose依赖版本管理
     - 经过验证的稳定版本
 
 5. **SDK 版本**:
     - minSdk 29确保与大多数车载设备兼容
-    - targetSdk 33提供最新的API支持
-    - compileSdk 33支持最新的编译特性
+    - targetSdk 34提供最新的API支持
+    - compileSdk 34支持最新的编译特性
 
 ## 功能特性
 
@@ -89,4 +91,6 @@ automotive/
 - 配置基础构建脚本
 - 添加车载UI相关依赖
 - 集成Jetpack Compose
-- 添加Coil图片加载支持 
+- 添加Coil图片加载支持
+- 更新Kotlin版本到1.8.21以兼容Compose Compiler
+- 更新SDK版本到34以支持最新特性 

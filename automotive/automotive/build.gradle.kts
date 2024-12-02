@@ -5,12 +5,13 @@ plugins {
 
 android {
     namespace = "com.jj.automotive"
-    compileSdk = 33
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId = "com.jj.automotive"
         minSdk = 29
-        targetSdk = 33
+
         versionCode = 1
         versionName = "1.0"
     }
@@ -53,7 +54,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
-    implementation(libs.androidx.car.ui)
+    // 暂时注释掉 car-ui-lib
+    // implementation(libs.androidx.car.ui)
     
     // Compose依赖
     implementation(libs.androidx.activity.compose)
