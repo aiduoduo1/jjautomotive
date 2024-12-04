@@ -91,7 +91,7 @@ automotive/
 2. Android Studio版本建议使用最新的稳定版
 3. 首次导入项目后，建议执行一次Gradle sync
 4. 如需支持更老的车载设备，可以考虑调整minSdk版本
-5. 地图使用高德地图，生成SHA1时要注意MAC、项目、gradle 版本要适配，本项目适配的是java17
+5. 地图使用高德地图，生成SHA1时要注意MAC、项目、gradle 版本要适配，本项目适配的是java17（搁置）
 
 ## 更新日志
 
@@ -105,3 +105,5 @@ automotive/
 - 配置Java 17支持 
 - 实现车载专用按钮组件
 
+### 2024-04
+- 使用WorkManger 搭配 BootBroadcastReceiver 实现开机自启动

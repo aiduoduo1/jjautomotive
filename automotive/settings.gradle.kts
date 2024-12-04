@@ -27,6 +27,17 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        // 配置仓库优先级
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url = uri("https://repo.gradle.org/gradle/libs-releases")
+                }
+            }
+            filter {
+                includeGroup("org.gradle")
+            }
+        }
         // 添加阿里云镜像
         maven { url = uri("https://maven.aliyun.com/repository/google") }
         maven { url = uri("https://maven.aliyun.com/repository/public") }
