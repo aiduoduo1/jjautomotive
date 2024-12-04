@@ -50,3 +50,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "automotive"
 include(":automotive")
+include(":musicplayer")
+include(":dashboard")

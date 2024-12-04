@@ -5,18 +5,18 @@ plugins {
 }
 
 android {
-    namespace = "com.jj.automotive"
+    namespace = "com.jj.musicplayer"
     compileSdk = 34
     buildToolsVersion = "34.0.0"
 
     defaultConfig {
-        applicationId = "com.jj.automotive"
+        applicationId = "com.jj.musicplayer"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -28,12 +28,11 @@ android {
             )
         }
     }
-    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    
+
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -41,11 +40,6 @@ android {
     buildFeatures {
         compose = true
     }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -54,10 +48,11 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
-    
+
     // Compose依赖
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -84,4 +79,3 @@ dependencies {
     //work依赖
     implementation(libs.work.runtime)
 }
-
